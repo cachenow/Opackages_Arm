@@ -33,7 +33,6 @@ jobs:
         rm -rf ./.config
         rm -rf ./*.txt
         rm -rf ./luci-app-ddns-go
-        rm -rf ./app/luci-app-tailscale
         rm -rf ./luci-app-tailscale
       
         git clone https://github.com/sirpdboy/luci-app-ddns-go ./luci-app-ddns-go
