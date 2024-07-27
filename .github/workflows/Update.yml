@@ -1,0 +1,54 @@
+name: Update
+
+on: 
+  repository_dispatch:
+  workflow_dispatch:
+
+# 定时触发编译
+  schedule:
+    - cron: 0 4,8,12,16,20 * * *
+
+jobs:
+  Update:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Clone Repository
+      uses: actions/checkout@v3
+
+    - name: Set git
+      run : |
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
+        sudo timedatectl set-timezone "Asia/Shanghai"
+
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
+      continue-on-error: true
+      with:
+        retain_days: 1
+        keep_minimum_runs: 0  
+        
+    - name: Update
+      run: |
+        rm -rf ./.config
+        rm -rf ./*.txt
+        rm -rf ./luci-app-ddns-go
+        rm -rf ./app/luci-app-tailscale
+      
+        git clone https://github.com/sirpdboy/luci-app-ddns-go ./luci-app-ddns-go
+        find ./luci-app-ddns-go -path '*/.*' -delete
+
+        git clone https://github.com/asvow/luci-app-tailscale ./app/luci-app-tailscale
+        find ./app/luci-app-tailscale -path '*/.*' -delete
+    
+    - name: Apply
+      run: |
+        if [ -n "$(git status --untracked-files=all -s)" ]; then
+          git add .
+          git commit --message "🔥最后同步时间为 $(date +%Y-%m-%d" "%H:%M:%S)"
+          git push --force
+        else
+          last_commit_date="$(git log -1 --format='%cd' --date=format:'%Y-%m-%d %H:%M:%S')"
+          git commit --allow-empty --message "❄️最后同步时间为 ${last_commit_date}"
+          git push --force
+        fi
