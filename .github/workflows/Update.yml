@@ -40,6 +40,9 @@ jobs:
 
         git clone https://github.com/asvow/luci-app-tailscale ./luci-app-tailscale
         find ./luci-app-tailscale -path '*/.*' -delete
+
+        svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-telegrambot ./luci-app-telegrambot
+        find ./luci-app-telegrambot -path '*/.*' -delete
     
     - name: Apply
       run: |
