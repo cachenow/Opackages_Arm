@@ -15,6 +15,10 @@ jobs:
     - name: Clone Repository
       uses: actions/checkout@v3
 
+    - name: Install SVN
+      run: |
+        apt-get update && apt-get install -y subversion
+
     - name: Set git
       run : |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
