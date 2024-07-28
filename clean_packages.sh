@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 读取保留包的列表
-keep_list=$(cat keep.txt)
+keep_list=$(cat ./keep.txt)
 
 # 遍历app目录下的所有文件夹
-for dir in app/*/; do
+for dir in ./app/*/; do
     # 获取当前文件夹的名称
     dir_name=$(basename "$dir")
     
