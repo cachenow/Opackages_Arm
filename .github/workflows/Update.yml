@@ -38,6 +38,7 @@ jobs:
         rm -rf ./*.txt
         rm -rf ./luci-app-ddns-go
         rm -rf ./luci-app-tailscale
+        rm -rf ./app
       
         git clone https://github.com/sirpdboy/luci-app-ddns-go ./luci-app-ddns-go
         find ./luci-app-ddns-go -path '*/.*' -delete
@@ -45,8 +46,9 @@ jobs:
         git clone https://github.com/asvow/luci-app-tailscale ./luci-app-tailscale
         find ./luci-app-tailscale -path '*/.*' -delete
 
-        svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-telegrambot ./luci-app-telegrambot
-        find ./luci-app-telegrambot -path '*/.*' -delete
+        git clone https://github.com/kiddin9/openwrt-packages ./app
+        chmod +x ./clean_packages.sh && ./clean_packages.sh
+        find ./app -path '*/.*' -delete
     
     - name: Apply
       run: |
