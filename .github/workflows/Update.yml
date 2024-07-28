@@ -35,7 +35,6 @@ jobs:
     - name: Update
       run: |
         rm -rf ./.config
-        rm -rf ./*.txt
         rm -rf ./luci-app-ddns-go
         rm -rf ./luci-app-tailscale
         rm -rf ./app
