@@ -1,0 +1,5 @@
+luci-app-telegrambot
+telegrambot
+luci-app-socat
+netdata
+luci-app-netdata
