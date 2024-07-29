@@ -1,3 +1,0 @@
-luci-app-telegrambot
-telegrambot
-luci-app-socat
