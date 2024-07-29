@@ -34,7 +34,6 @@ jobs:
         
     - name: Update
       run: |
-        rm -rf ./.config
         rm -rf ./app
 
         git clone https://github.com/kiddin9/openwrt-packages ./app
