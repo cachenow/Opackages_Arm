@@ -39,7 +39,12 @@ jobs:
         git clone https://github.com/kiddin9/openwrt-packages ./app
         chmod +x ./clean_packages.sh && ./clean_packages.sh
         find ./app -path '*/.*' -delete
-    
+
+        git clone https://github.com/jerrykuku/luci-theme-argon ./theme/luci-theme-argon
+        git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06 ./theme/luci-theme-argon-18.06
+        git clone https://github.com/jerrykuku/luci-app-argon-config ./theme/luci-app-argon-config
+        find ./theme -path '*/.*' -delete
+
     - name: Apply
       run: |
         if [ -n "$(git status --untracked-files=all -s)" ]; then
