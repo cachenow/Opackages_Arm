@@ -16,6 +16,7 @@ luci-app-firewall
 luci-app-frpc
 luci-app-guest-wifi
 luci-app-mosdns
+luci-app-netdata
 luci-app-openvpn-server
 luci-app-samba4
 luci-app-smartdns
@@ -32,6 +33,7 @@ luci-lib-fs
 luci-theme-argon
 miniupnpd
 mosdns
+netdata
 opkg
 pdnsd-alt
 ppp
