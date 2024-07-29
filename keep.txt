@@ -5,3 +5,5 @@ netdata
 luci-app-netdata
 ddns-go
 luci-app-ddns-go
+tailscale
+luci-app-tailscale
