@@ -3,7 +3,6 @@ base-files
 coremark
 curl
 ddns-go
-ddns-scripts
 dnsforwarder
 dnsproxy
 firewall

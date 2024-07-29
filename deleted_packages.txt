@@ -43,6 +43,7 @@ daed
 daed-next
 dapnet-gateway
 dcc2-wiwiz
+ddns-scripts
 ddnsto
 dns-forwarder
 dns2socks
