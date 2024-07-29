@@ -35,18 +35,12 @@ jobs:
     - name: Update
       run: |
         rm -rf ./.config
-        rm -rf ./luci-app-ddns-go
-        rm -rf ./luci-app-tailscale
         rm -rf ./app
-        rm -rf ./*.txt
-        rm -rf ./.config
 
         git clone https://github.com/kiddin9/openwrt-packages ./app
+        chmod +x ./clean_packages.sh && ./clean_packages.sh
         find ./app -path '*/.*' -delete
-      
-        wget https://github.com/cachenow/BuildAuto_Arm/raw/main/.config -O ./.config
-        chmod +x ./delete.sh && ./delete.sh
-   
+    
     - name: Apply
       run: |
         if [ -n "$(git status --untracked-files=all -s)" ]; then
