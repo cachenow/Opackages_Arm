@@ -35,6 +35,7 @@ jobs:
     - name: Update
       run: |
         rm -rf ./app
+        rm -rf ./theme
 
         git clone https://github.com/kiddin9/openwrt-packages ./app
         chmod +x ./clean_packages.sh && ./clean_packages.sh
