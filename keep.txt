@@ -3,3 +3,5 @@ telegrambot
 luci-app-socat
 netdata
 luci-app-netdata
+ddns-go
+luci-app-ddns-go
