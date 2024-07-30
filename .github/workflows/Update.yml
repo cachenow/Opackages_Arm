@@ -39,6 +39,7 @@ jobs:
 
         git clone https://github.com/kiddin9/openwrt-packages ./app
         chmod +x ./clean_packages.sh && ./clean_packages.sh
+        git clone --depth 1 https://github.com/destan19/OpenAppFilter .app/OpenAppFilter
         find ./app -path '*/.*' -delete
 
         git clone https://github.com/jerrykuku/luci-theme-argon ./theme/luci-theme-argon
