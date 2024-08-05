@@ -9,3 +9,4 @@ tailscale
 luci-app-tailscale
 luci-app-wechatpush
 luci-app-frpc
+luci-app-turboacc
