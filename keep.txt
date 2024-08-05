@@ -7,3 +7,4 @@ ddns-go
 luci-app-ddns-go
 tailscale
 luci-app-tailscale
+luci-app-wechatpush
